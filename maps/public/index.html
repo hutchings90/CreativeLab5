@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Maps!</title>
+		<link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+		<script src="javascripts/angular.min.js"></script>
+		<script src="javascripts/app.js"></script>
+	</head>
+	<body ng-app="LoginApp" ng-controller="LoginController">
+		<form ng-submit="startSession()">
+			<div>
+				<div id="start" class="smooth">
+					<div id="session-prompt">
+						<div>Username</div>
+						<input type="text" placeholder="Required" ng-model="name" ng-required="true"/>
+					</div>
+					<div id="session-input">
+						<div>Password</div>
+						<input type="password" placeholder="Required" ng-model="password" ng-required="true"/>
+					</div>
+				</div>
+			</div>
+			<button id="login" class="smooth" type="submit">Sign In</button>
+		</form>
+	</body>
+</html>
