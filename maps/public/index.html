@@ -3,25 +3,50 @@
 	<head>
 		<title>Maps!</title>
 		<link rel="stylesheet" type="text/css" href="stylesheets/style.css"/>
+		<script src="javascripts/jquery-3.1.0.min.js"></script>
 		<script src="javascripts/angular.min.js"></script>
 		<script src="javascripts/app.js"></script>
 	</head>
-	<body ng-app="LoginApp" ng-controller="LoginController">
-		<form ng-submit="startSession()">
-			<div>
-				<div id="start" class="smooth">
-					<div id="session-prompt">
-						<div>Username</div>
-						<input type="text" placeholder="Required" ng-model="name" ng-required="true"/>
-					</div>
-					<div id="session-input">
-						<div>Password</div>
-						<input type="password" placeholder="Required" ng-model="password" ng-required="true"/>
+	<body ng-app="MapsApp" ng-controller="MapsController">
+		<div id="login">
+			<form>
+				<div>
+					<div id="start" class="smooth">
+						<div id="session-prompt">
+							<div>Username</div>
+							<input type="text" placeholder="Required" ng-model="name" ng-required="true"/>
+						</div>
+						<div id="session-input">
+							<div>Password</div>
+							<input type="password" placeholder="Required" ng-model="password" ng-required="true"/>
+						</div>
 					</div>
 				</div>
+				<button id="login" class="smooth" type="submit" ng-click="startSession()">Sign In</button>
+			</form>
+			<div ng-model="failedLoginMessage"></div>
+		</div>
+		<div class="quarter-width">
+			<div class="half-height">
+				<h2>Landmarks</h2>
+				<div ng-repeat="landmark in landmarks">
+					<div ng-bind="landmark"></div>
+				</div>
 			</div>
-			<button id="login" class="smooth" type="submit">Sign In</button>
-		</form>
-		<div ng-model="failedLoginMessage"></div>
+			<div class="half-height">
+				<h2>Contacts</h2>
+				<div ng-repeat="contact in contacts">
+					<div ng-bind="contact"></div>
+				</div>
+			</div>
+		</div>
+		<div class="three-quarter-width">
+			<iframe
+				width="600"
+				height="450"
+				frameborder="0" style="border:0"
+				src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCdW0Lm6O4G7x4rEgjy8sPLa0zUFg09gBk&q=Space+Needle,Seattle+WA" allowfullscreen>
+			</iframe>
+		</div>
 	</body>
 </html>

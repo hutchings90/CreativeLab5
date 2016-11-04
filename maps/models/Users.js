@@ -10,7 +10,7 @@ var loginSchema = new mongoose.Schema({
 });
 var userSchema = new mongoose.Schema({
 	username: String,
-	contacts: [],
+	contacts: [{type: mongoose.Schema.ObjectId, ref: 'userSchema'}],
 	landmarks: [locationSchema]
 });
 

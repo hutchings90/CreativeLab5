@@ -1,5 +1,7 @@
 body{
 	font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
 }
 
 a{
@@ -42,4 +44,14 @@ button[class="smooth"]:hover{
 	padding: 15px;
 	margin: 5px;
 	border-radius: 8px;
+}
+
+.quarter-width{
+	display: inline-block;
+	width: 24%;
+}
+
+.three-quarter-width{
+	width: 74%;
+	display: inline-block;
 }

@@ -1,0 +1,16 @@
+<form>
+	<div>
+		<div id="start" class="smooth">
+			<div id="session-prompt">
+				<div>Username</div>
+				<input type="text" placeholder="Required" ng-model="name" ng-required="true"/>
+			</div>
+			<div id="session-input">
+				<div>Password</div>
+				<input type="password" placeholder="Required" ng-model="password" ng-required="true"/>
+			</div>
+		</div>
+	</div>
+	<button id="login" class="smooth" type="submit" ng-click="startSession()">Sign In</button>
+</form>
+<div ng-model="failedLoginMessage"></div>

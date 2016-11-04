@@ -10,9 +10,18 @@ router.get('/', function(req, res, next) {
 	res.render('index', { title: 'Express' });
 });
 
+router.get('/login', function(req, res, next){
+	res.redirect('/partials/login.html');
+});
+
 router.get('/user/:name/:password', function(req, res, next){
 	
 	console.log("At a user");
+});
+
+router.get('/testMap', function(req, res, next){
+	console.log("In test");
+	res.redirect('/partials/user.html');
 });
 
 module.exports = router;
